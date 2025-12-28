@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '1'))
+    }
+
     stages {
         stage('Pre build') {
             steps {
@@ -25,14 +29,15 @@ pipeline {
 
         // test
         // deploy
-        stage('Deploy') {
-            steps {
-                jiraSendDeploymentInfo(
-                        environmentId: 'production',
-                        environmentName: 'production',
-                        environmentType: 'production'
-                )
-            }
+    }
+    
+    post {
+        always {
+            jiraSendDeploymentInfo(
+                    environmentId: 'production',
+                    environmentName: 'production',
+                    environmentType: 'production'
+            )
         }
     }
 }
