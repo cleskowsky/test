@@ -8,5 +8,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/cleskowsky/test2.git'
             }
         }
+        
+        // build
+        // test
+        // deploy
     }
 }
