@@ -22,22 +22,25 @@ pipeline {
         // build
         stage('Build') {
             steps {
-                echo 'hello, world'
-                echo 'hi ma!'
+                echo 'in build'
             }
         }
 
         // test
         // deploy
-    }
-    
-    post {
-        always {
-            jiraSendDeploymentInfo(
-                    environmentId: 'nightly',
-                    environmentName: 'nightly',
-                    environmentType: 'development'
-            )
+        stage('Deploy') {
+            steps {
+                echo 'in deploy'
+            }
+            post {
+                always {
+                    jiraSendDeploymentInfo(
+                            environmentId: 'nightly',
+                            environmentName: 'nightly',
+                            environmentType: 'development'
+                    )
+                }
+            }
         }
     }
 }
