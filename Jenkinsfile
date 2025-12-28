@@ -34,9 +34,9 @@ pipeline {
     post {
         always {
             jiraSendDeploymentInfo(
-                    environmentId: 'production',
-                    environmentName: 'production',
-                    environmentType: 'production'
+                    environmentId: 'nightly',
+                    environmentName: 'nightly',
+                    environmentType: 'development'
             )
         }
     }
