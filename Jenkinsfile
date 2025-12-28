@@ -8,8 +8,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/cleskowsky/test2.git'
             }
         }
-        
+
         // build
+        stage('Build') {
+            steps {
+                echo 'hello, world'
+            }
+        }
+
         // test
         // deploy
     }
