@@ -28,9 +28,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 jiraSendDeploymentInfo(
-                        environmentId: 'staging',
-                        environmentName: 'staging',
-                        environmentType: 'staging'
+                        environmentId: 'production',
+                        environmentName: 'production',
+                        environmentType: 'production'
                 )
             }
         }
