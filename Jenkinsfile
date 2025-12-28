@@ -1,10 +1,11 @@
 pipeline {
+
     agent any
- 
+
     stages {
         stage('Source') {
             steps {
-                echo 'hello, world'
+                git branch: 'main', url: 'https://github.com/cleskowsky/test2.git'
             }
         }
     }
