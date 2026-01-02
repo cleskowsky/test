@@ -38,7 +38,7 @@ pipeline {
                             environmentId: 'nightly',
                             environmentName: 'nightly',
                             environmentType: 'development',
-                            issueKeys: ['DEV-1']
+                            issueKeys: ['DEV-1', 'DEV-2']
                     )
                 }
             }
