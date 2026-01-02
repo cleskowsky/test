@@ -37,7 +37,8 @@ pipeline {
                     jiraSendDeploymentInfo(
                             environmentId: 'nightly',
                             environmentName: 'nightly',
-                            environmentType: 'development'
+                            environmentType: 'development',
+                            issueKeys: ['DEV-1']
                     )
                 }
             }
